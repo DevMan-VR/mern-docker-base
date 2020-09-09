@@ -4,7 +4,7 @@ services:
   server:
     build:
       context: ./server
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.node
     image: myapp-server
     container_name: myapp-node-server
     command: /usr/src/app/node_modules/.bin/nodemon server.js
@@ -31,7 +31,7 @@ services:
   client:
     build:
       context: ./client
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.react
     image: myapp-client
     stdin_open: true
     container_name: myapp-react-client
