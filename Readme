@@ -1,1 +1,11 @@
 Testeo de push rama bpeso a master
+
+
+Setup
+
+Instalar docker
+Instalar docker-compose
+
+Run
+
+sudo docker-compose up --build
