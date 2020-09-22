@@ -1,11 +1,24 @@
-Testeo de push rama bpeso a master
+SETUP
 
+Instalar docker y docker-compose: 
+Linux: https://docs.docker.com/engine/install/
+Mac: https://docs.docker.com/docker-for-mac/install/ 
+Windows: https://docs.docker.com/docker-for-windows/install/
 
-Setup
+Intalar Git:
+https://git-scm.com/
 
-Instalar docker
-Instalar docker-compose
+Luego clonar el repositorio con el siguiente comando:
 
-Run
+git clone "url-del-repo"
 
-sudo docker-compose up --build
+Solicitar el archivo ".env" a tu jefe de grupo y pegarlo en la carpeta server, quedando ".../server/.env"
+
+RUN
+
+En la ruta donde tengas el repo clonado ejecutar el siguiente comando.
+
+Linux y Mac: sudo docker-compose up --build
+Windows: docker-compose up --build
+
+Para finalizar la ejecucion de los contenedores presionar ctrl+c en la "terminal/conosla" donde se esten ejecutando.
