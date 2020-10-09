@@ -6,7 +6,7 @@ services:
         context: .
         dockerfile: Dockerfile
       image: myapp-server-img
-      container_name: myapp-node-express
+      container_name: node-express
       volumes:
        - .:/usr/src/app
        - /usr/src/app/node_modules
@@ -21,6 +21,22 @@ services:
         - MONGO_DB=$MONGO_DB
     mongo:
       image: mongo
-      container_name: myapp-mongodb
+      container_name: mongodb
       ports:
         - "27017:27017"
+
+    client:
+      build:
+        context: ./client
+        dockerfile: Dockerfile
+      image: myapp-client
+      stdin_open: true
+      container_name: react-client
+      command: yarn start
+      volumes:
+        - ./client/:/usr/app
+        - /usr/app/node_modules
+      ports:
+        - "3000:3000"
+      networks:
+        - app-network
